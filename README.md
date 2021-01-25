@@ -24,9 +24,10 @@ file to run it automatically every time you login. Note that this could add a no
 
 #### Usage
 - Type `Ctrl-l` on a new line to bring up the list of commands to fuzzy search through. The preview window shows up to
-the right with the command description and examples. Use `Ctrl-k` and `Ctrl-J` to move up and down through the list of commands. Use `Alt-K` and `Alt-J` to move the preview window up and down, which can be useful for commands with long previews. Hit `Enter` to select a command and print it out onto the terminal.
+the right with the command description and examples. Use `Ctrl-k` and `Ctrl-J` to move up and down through the list of commands. Use `Alt-K` and `Alt-J` to move the preview window up and down, which can be useful for commands with long previews. Hit `Enter` to select a command and print it out onto the terminal. 
 - Once a command is selected, or if you have typed an `sfdx` command in manually (without fzf), hitting `Ctrl-l` again will bring
 up the list of flags associated with the command. As you scroll through the list of flags, the preview window will show a description of the flag and some of its properties. Hit `Enter` to select the flag and print it out onto the terminal.
 
-**Note:** If you don't end up adding `sfdx commands --json > ~/.sfdxcommands.json` to your `.profile` or `.bashrc` file, run the 
-command manually from time to time to keep up with updates to the CLI
+#### Notes
+- This script only works when `sfdx` is the only command on a line (i.e. doesn't work if you are trying to pipe the output of another command to sfdx, for example)
+- If you don't end up adding `sfdx commands --json > ~/.sfdxcommands.json` to your `.profile` or `.bashrc` file, run the command manually from time to time to keep up with updates to the CLI
