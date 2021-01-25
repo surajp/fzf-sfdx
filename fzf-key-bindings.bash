@@ -31,15 +31,15 @@ __fzf_sfdx__(){
 if [ "${BASH_VERSINFO[0]}" -lt 4 ]; then
 
   # CTRL-K - Search through sfdx commands
-  bind -m emacs-standard '"\C-k": "\C-e \C-u\C-y\ey\C-u"$(__fzf_sfdx__)"\e\C-e\er"'
-  bind -m vi-command '"\C-k": "\C-z\C-k\C-z"'
-  bind -m vi-insert '"\C-k": "\C-z\C-k\C-z"'
+  bind -m emacs-standard '"\C-l": "\C-e \C-u\C-y\ey\C-u"$(__fzf_sfdx__)"\e\C-e\er"'
+  bind -m vi-command '"\C-l": "\C-z\C-l\C-z"'
+  bind -m vi-insert '"\C-l": "\C-z\C-l\C-z"'
 
 else
 
   # CTRL-K - Search through sfdx commands
-  bind -m emacs-standard -x '"\C-k": __fzf_sfdx__'
-  bind -m vi-command -x '"\C-k": __fzf_sfdx__'
-  bind -m vi-insert -x '"\C-k": __fzf_sfdx__'
+  bind -m emacs-standard -x '"\C-l": __fzf_sfdx__'
+  bind -m vi-command -x '"\C-l": __fzf_sfdx__'
+  bind -m vi-insert -x '"\C-l": __fzf_sfdx__'
 
 fi

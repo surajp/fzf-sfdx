@@ -18,14 +18,14 @@ on using this sfdx script, install FZF. It will change your life.)
 - Copy [fzf-keybindings.bash](https://github.com/junegunn/fzf/blob/master/shell/key-bindings.bash)  from the `fzf` repo
 if you haven't already as part of installation, to a suitable directory and add it to your `~/.bashrc` file.
 - Add the contents of the [fzf-keybindings.bash](./fzf-key-bindings.bash) file from this repo to the appropriate sections in your `fzf-keybindings.bash` file above. (The functions `__fzf_sfdx` and `__fzf_sfdx_flags__` go in the functions section and the 
-keybindings go in the keybindings section). Note that the keybinding I'm using here is `Ctrl-K`. Feel free to change it in this file.
+keybindings go in the keybindings section). Note that the keybinding I'm using here is `Ctrl-l`. Feel free to change it in this file.
 - Run the following command `sfdx commands --json > ~/.sfdxcommands.json`. (You can add it your `.bashrc` or `.profile`
 file to run it automatically every time you login. Note that this could add a noticeable delay to launching a new terminal)
 
 #### Usage
-- Type `Ctrl-K` on a new line to bring up the list of commands to fuzzy search through. The preview window shows up to
-the right with the command description and examples. Use `Ctrl-K` and `Ctrl-J` to move up and down through the list of commands. Use `Alt-K` and `Alt-J` to move the preview window up and down, which can be useful for commands with long previews. Hit `Enter` to select a command and print it out onto the terminal.
-- Once a command is selected, or if you have typed an `sfdx` command in manually (without fzf), hitting `Ctrl-K` again will bring
+- Type `Ctrl-l` on a new line to bring up the list of commands to fuzzy search through. The preview window shows up to
+the right with the command description and examples. Use `Ctrl-k` and `Ctrl-J` to move up and down through the list of commands. Use `Alt-K` and `Alt-J` to move the preview window up and down, which can be useful for commands with long previews. Hit `Enter` to select a command and print it out onto the terminal.
+- Once a command is selected, or if you have typed an `sfdx` command in manually (without fzf), hitting `Ctrl-l` again will bring
 up the list of flags associated with the command. As you scroll through the list of flags, the preview window will show a description of the flag and some of its properties. Hit `Enter` to select the flag and print it out onto the terminal.
 
 **Note:** If you don't end up adding `sfdx commands --json > ~/.sfdxcommands.json` to your `.profile` or `.bashrc` file, run the 
