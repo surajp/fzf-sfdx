@@ -1,7 +1,11 @@
 
 __fzf_sfdx_flags__(){
   local selected="$1"
-  local ret=`cat ~/.sfdxcommands.json | jq -r ".[] | select(.id==\"$selected\") | .flags | keys[]" | $(__fzfcmd) -m --bind 'ctrl-z:ignore,alt-j:preview-down,alt-k:preview-up' --preview='cat ~/.sfdxcommands.json | jq -r ".[] | select(.id==\"'$selected'\") | .flags | to_entries[] | select (.key==\""{}"\") | [\"Command: '"$selected"'\n\",.value][]"' --preview-window='right:wrap'`
+  local fullcmd=""
+  for i in "${@:2}"
+  do fullcmd+=" $i"
+  done
+  local ret=`cat ~/.sfdxcommands.json | jq -r ".[] | select(.id==\"$selected\") | .flags | keys[]" | $(__fzfcmd) -m --bind 'ctrl-z:ignore,alt-j:preview-down,alt-k:preview-up' --preview='cat ~/.sfdxcommands.json | jq -r ".[] | select(.id==\"'$selected'\") | .flags | to_entries[] | select (.key==\""{}"\") | [\"Command:\n'"$fullcmd"'\n\",\"Flag Description:\",.value][]"' --preview-window='right:wrap'`
   echo $ret
 }
 
@@ -12,7 +16,7 @@ __fzf_sfdx__(){
   local match="$(cat ~/.sfdxcommands.json | jq -r '.[] | select(.id=="'$subcmd'")')"
   if [[ "$cmd" = "sfdx" && "$match" != "" ]]
   then
-    local flag="$(__fzf_sfdx_flags__ $subcmd)"
+    local flag="$(__fzf_sfdx_flags__ $subcmd $fullcmd)"
     if [[ "$flag" != "" ]]
     then
       READLINE_LINE="$fullcmd --$flag"
