@@ -47,3 +47,11 @@ See it in action below
 - This script only works when `sfdx` is the only command on a line (i.e. doesn't work if you are trying to pipe the output of another command to sfdx, for example)
 - If you don't end up adding `sfdx commands --json > ~/.sfdxcommands.json` to your `.profile` or `.bashrc` file, run the command manually from time to time to keep up with updates to the CLI
 - The script binds `Ctrl-e` to bring up sfdx commands. If you'd like to change the mapping, you can change it [here](./fzf-key-bindings.bash#L130) (for bash) or [here](./fzf-key-bindings.zsh#L151) (for zsh)
+- If you'd like to use this in VS Code's integrated terminal, you'd need to prevent `Ctrl-e` from being hijacked by VSC to quick open files and have it be sent to the shell itself. This can be accomplished by adding the following line to `settings.json`. Note the hyphen(`-`) before the setting name to unbind the action.
+
+```json
+  "terminal.integrated.commandsToSkipShell": [
+        "-workbench.action.quickOpen"
+        ]
+```
+    
