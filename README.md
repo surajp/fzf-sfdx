@@ -1,5 +1,7 @@
 ## Supercharge your Salesforce CLI game with FZF!
 
+Added Zsh Support :confetti_ball:
+
 Fuzzy find Salesforce CLI commands and flags as you type, with live previews of what each command and flag does. No more typos, switching to the browser or running `help` to lookup commands and associated options. Autocomplete doesn't get any better than this!
 
 See it in action below
@@ -13,16 +15,26 @@ See it in action below
   on using this sfdx script, install FZF. It will change your life.)
 - [jq](https://stedolan.github.io/jq/download/)
 - [Salesforce CLI](https://developer.salesforce.com/tools/sfdxcli) (the npm version installed using `npm i -g sfdx-cli`)
-- Bash shell
+- Bash or Zsh shell
 
 #### Setup
+
+##### Bash
 
 - Copy [fzf-keybindings.bash](https://github.com/junegunn/fzf/blob/master/shell/key-bindings.bash) from the `fzf` repo
   if you haven't already as part of installation, to a suitable directory and add it to your `~/.bashrc` file.
 - Add the contents of the [fzf-keybindings.bash](./fzf-key-bindings.bash) file from this repo to the appropriate sections in your `fzf-keybindings.bash` file above. (The functions `__fzf_sfdx` and `__fzf_sfdx_flags__` go in the functions section and the
-  keybindings go in the keybindings section). Note that the keybinding I'm using here is `Ctrl-l`. Feel free to change it in this file.
+  keybindings go in the keybindings section). Note that the keybinding I'm using here is `Ctrl-e`. Feel free to change it in this file.
 - Run the following command `sfdx commands --json > ~/.sfdxcommands.json`. (You can add it your `.bashrc` or `.profile`
   file to run it automatically every time you login. Note that this could add a noticeable delay to launching a new terminal)
+
+##### Zsh
+
+- Copy [fzf-key-bindings.zsh](./fzf-key-bindings.zsh) to a directory on your machine
+- Replace the path to the `key-bindings.zsh` file in `$HOME/.fzf.zsh` with the path to the file above
+- Run the following command `sfdx commands --json > ~/.sfdxcommands.json`. (You can add it your `.zshrc`
+  file to run it automatically every time you login. Note that this could add a noticeable delay to launching a new terminal)
+- Restart your shell or run `source $HOME/.zshrc`
 
 #### Usage
 
