@@ -1,6 +1,4 @@
-## Supercharge your Salesforce CLI game with FZF!
-
-Added Zsh Support :confetti_ball:
+## Supercharge your Salesforce CLI game with FZF! (For Bash and Zsh)
 
 Fuzzy find Salesforce CLI commands and flags as you type, with live previews of what each command and flag does. No more typos, switching to the browser or running `help` to lookup commands and associated options. Autocomplete doesn't get any better than this!
 
