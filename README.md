@@ -52,5 +52,3 @@ See it in action below
         "-workbench.action.quickOpen"
         ]
 ```
-- As of 09/25/2021, the `sfdx commands --json` is broken due to [this issue](https://github.com/forcedotcom/sfdx-core/issues/462). To work around this, copy [checkLightningDomain.js](https://gist.github.com/surajp/aaa759df4f3a821fa504462350614bd1) to `<NPM_PACKAGES_HOME>/sfdx-cli/lib/node_modules/sfdx-cli/node_modules/@salesforce/core/lib/util` on your machine, each time you update the cli. The full path will be printed in the error message when you try to run `sfdx commands --json` after an update.
-
